@@ -1,0 +1,31 @@
+zh-CN:
+  refinery:
+    plugins:
+      banners:
+        title: Banners
+    banners:
+      admin:
+        banners:
+          actions:
+            create_new: 建立新的 Banner
+            reorder: 对 Banners 重新排序
+            reorder_done: 对 Banners 的重新排序结束
+          records:
+            title: Banners
+            sorry_no_results: 对不起，未找到结果。 #Sorry! There are no results found.
+
+            # There are no Banners yet. Click "Add New Banner" to add your first banner.
+            no_items_yet: 目前没有 Banners . 点击 "Add New Banner" 创建一个banner.
+          banner:
+            view_live_html: 查看 banner 的最新内容.<br/><em>(新窗口中打开)</em>
+            edit: 编辑 banner
+            delete: 永久删除 banner
+      banners:
+        show:
+          other: 其他 Banners
+  activerecord:
+    attributes:
+      'refinery/banners/banner':
+        title: Title
+        image: Image
+        content: Content

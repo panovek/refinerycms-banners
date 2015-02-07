@@ -1,0 +1,29 @@
+tr:
+  refinery:
+    plugins:
+      banners:
+        title: Banners
+    banners:
+      admin:
+        banners:
+          actions:
+            create_new: Yeni Ekle Banner
+            reorder: Tekrar sirala Banners
+            reorder_done: Tekrar siralama tamamlandiBanners
+          records:
+            title: Banners
+            sorry_no_results: Uzgunum! Herhangi bir sonuc bulunamadi.
+            no_items_yet: Herhangi bir Banners yok henuz.  Tikla "Yeni Ekle Banner" eklemek senin ilk banner.
+          banner:
+            view_live_html: Bunu canlu banner goruntule <br/><em>(yeni bir pencerede acar)</em>
+            edit: Bunu Duzenle banner
+            delete: Bunu Sil banner sonsuza dek
+      banners:
+        show:
+          other: Diger Banners
+  activerecord:
+    attributes:
+      'refinery/banners/banner':
+        title: Title
+        image: Image
+        content: Content

@@ -1,0 +1,29 @@
+it:
+  refinery:
+    plugins:
+      banners:
+        title: Banners
+    banners:
+      admin:
+        banners:
+          actions:
+            create_new: Aggiungi Nuovo Banner
+            reorder: Riordina Banners
+            reorder_done: Termina il Riordino di Banners
+          records:
+            title: Banners
+            sorry_no_results: "Spiacenti! Nessun risultato trovato"
+            no_items_yet: Non ci sono ancora Banners. Clicca "Aggiungi Nuovo Banner" per aggiungere il tuo primo banner.
+          banner:
+            view_live_html: Guarda live questo banner <br/><em>(apre una nuova finestra)</em>
+            edit: Modifica questo banner
+            delete: Rimuovi per sempre questo banner
+      banners:
+        show:
+          other: Altri Banners
+  activerecord:
+    attributes:
+      'refinery/banners/banner':
+        title: Title
+        image: Image
+        content: Content
