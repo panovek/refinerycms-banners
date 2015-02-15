@@ -5,6 +5,16 @@ module Refinery
 
         crudify :'refinery/banners/banner'
 
+        # override because acts_as_indexed dont work with utf8
+        def index
+          if params[:search].present?
+            @banners = Banner.where('LOWER(title) ILIKE ?', "%#{params[:search].downcase}%")
+          else
+            @banners = Banner.all
+          end
+          @banners = @banners.order('created_at desc').paginate(:page => params[:page])
+        end
+
         protected
 
         def banner_params

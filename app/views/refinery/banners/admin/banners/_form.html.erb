@@ -39,9 +39,10 @@
       <%= f.datetime_select :expiry_date, :include_blank => true, :ampm => true -%>
     </div>
 
+    </br>
     <div class='field'>
-      <%= f.label :is_active -%>
-      <%= f.check_box :is_active, :checked => @banner.new_record? ? true : @banner[:is_active]  -%>
+      <%= f.check_box :is_active, :checked => @banner.new_record? ? true : @banner[:is_active] %>
+      <%= f.label :is_active, :class => 'input_label' %>
     </div>
 
 

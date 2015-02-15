@@ -5,7 +5,7 @@ module Refinery
 
       belongs_to :image, :class_name => '::Refinery::Image'
 
-      acts_as_indexed :fields => [:title, :description]
+      acts_as_indexed :fields => [:title]
 
       validates :title, :presence => true, :uniqueness => true
       validates_presence_of :start_date
