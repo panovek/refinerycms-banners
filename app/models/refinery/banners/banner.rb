@@ -3,6 +3,9 @@ module Refinery
     class Banner < Refinery::Core::BaseModel
       self.table_name = 'refinery_banners'
 
+      enum banner_type: [:большой, :боковой]
+      OPTIONS = {banner_types[:большой] => {width: 790, height: 90}, banner_types[:боковой] => {width: 175, height: 85}}
+
       belongs_to :image, :class_name => '::Refinery::Image'
 
       acts_as_indexed :fields => [:title]
@@ -23,6 +26,9 @@ module Refinery
         not_expired.active.where("start_date <= ?", Time.now).order(:position)
       }
 
+      scope :right_side_banners, -> { where(banner_type: banner_types[:боковой]) }
+      scope :left_side_banners, -> { where(banner_type: banner_types[:боковой]) }
+      scope :center_banners, -> { where(banner_type: banner_types[:большой]) }
     end
   end
 end

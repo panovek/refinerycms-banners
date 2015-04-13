@@ -31,3 +31,4 @@ ru:
         start_date: Дата начала показа
         expiry_date: Дата окончания показа
         is_active: Включен
+        banner_type: Тип баннера

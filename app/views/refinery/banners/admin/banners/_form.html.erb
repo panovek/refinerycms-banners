@@ -14,6 +14,11 @@
   </div>
 
   <div class='field'>
+    <%= f.label :banner_type -%>
+    <%= f.select :banner_type, Refinery::Banners::Banner::banner_types.keys, :class => "larger widest" -%>
+  </div>
+
+  <div class='field'>
     <%= f.label :image -%>
     <%= render '/refinery/admin/image_picker',
       :f => f,
