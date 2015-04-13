@@ -1,9 +1,9 @@
 Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
-  namespace :banners do
-    resources :banners, :path => '', :only => [:index, :show]
-  end
+  #namespace :banners do
+  #  resources :banners, :path => '', :only => [:index, :show]
+  #end
 
   # Admin routes
   namespace :banners, :path => '' do
@@ -13,6 +13,7 @@ Refinery::Core::Engine.routes.draw do
           post :update_positions
         end
       end
+      resources :placecontrols, :except => :show
     end
   end
 

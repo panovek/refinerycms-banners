@@ -1,0 +1,34 @@
+<%= link_to t('.to_banners'), refinery.banners_admin_banners_path %>
+
+<% if @placecontrols.any? %>
+  <table>
+    <tr>
+      <th>Страница</th>
+      <th><%= t('.show_on_leftside')%></th>
+      <th><%= t('.show_on_center')%></th>
+      <th><%= t('.show_on_rightside')%></th>
+      <th><%= t('.control')%></th>
+    </tr>
+    <% for placecontrol in @placecontrols %>
+    <tr>
+      <%= form_for [refinery, :banners_admin, placecontrol] do |f| -%>
+      <td><%= placecontrol.page.title %></td>
+      <td><%= f.check_box :show_on_leftside, checked: placecontrol.show_on_leftside %></td>
+      <td><%= f.check_box :show_on_center, checked: placecontrol.show_on_center %></td>
+      <td><%= f.check_box :show_on_rightside, checked: placecontrol.show_on_rightside %></td>
+      <td><%= submit_tag t('.save'), :class => "wymupdate button" %></td>
+      <% end %>
+    </tr>
+    <% end %>
+  </table>
+<% else %>
+  <p>
+    <% if searching? %>
+      <%= t('no_results', :scope => 'refinery.admin.search') %>
+    <% else %>
+      <strong>
+        <%= t('.no_items_yet') %>
+      </strong>
+    <% end %>
+  </p>
+<% end %>

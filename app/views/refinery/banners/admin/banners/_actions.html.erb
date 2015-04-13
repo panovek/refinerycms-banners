@@ -5,8 +5,10 @@
     </li>
   <% end %>
   <li>
-    <%= link_to t('.create_new'), refinery.new_banners_admin_banner_path,
-                 :class => "add_icon" %>
+    <%= link_to t('.create_new'), refinery.new_banners_admin_banner_path, :class => "add_icon" %>
+  </li>
+  <li>
+    <%= link_to t('.placecontrol'), refinery.banners_admin_placecontrols_path, :class => "go_icon" %>
   </li>
 <% if !searching? && ::Refinery::Banners::Admin::BannersController.sortable? && ::Refinery::Banners::Banner.many? %>
   <li>

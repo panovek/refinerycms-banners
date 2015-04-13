@@ -4,7 +4,7 @@ module Refinery
       self.table_name = 'refinery_banners'
 
       enum banner_type: [:большой, :боковой]
-      OPTIONS = {banner_types[:большой] => {width: 790, height: 90}, banner_types[:боковой] => {width: 175, height: 85}}
+      OPTIONS = {banner_types[:большой] => {width: 790, height: 90}, banner_types[:боковой] => {width: 175, height: 110}}
 
       belongs_to :image, :class_name => '::Refinery::Image'
 

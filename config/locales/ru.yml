@@ -5,11 +5,20 @@ ru:
         title: Баннеры
     banners:
       admin:
+        placecontrols:
+          index:
+            save: Сохранить
+            show_on_leftside: Банеры в левой колонке
+            show_on_center: Банеры в главной колонке
+            show_on_rightside: Банеры в правой колонке
+            control: Управление
+            to_banners: Перейти на страницу баннеров
         banners:
           actions:
             create_new: Добавить новый баннер
             reorder: Сортировать баннеры
             reorder_done: Закончить сортировку
+            placecontrol: Настроки показа банеров на страницах
           records:
             title: Баннеры
             sorry_no_results: Ничего не найдено
