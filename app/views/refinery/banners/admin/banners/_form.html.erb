@@ -24,8 +24,24 @@
       :f => f,
       :field => :image_id,
       :image => @banner.image,
-      :toggle_image_display => false -%>
+      :toggle_image_display => true -%>
   </div>
+
+  <% if @banner.image.present? %>
+    <% if @banner.banner_type == 'большой' %>
+        <div class='field'>
+          <%= f.label "Цвет фона для баннера" -%>
+          <%= f.text_field :background_color, id: 'background-color', style: "padding-left: 25px; height: 26px;" -%>
+        </div>
+    <% end %>
+    <div class='field'>
+      <%= f.label "Примерный вид баннера" -%>
+      <div id="example-banner" style="text-align: center; height: <%= Refinery::Banners::Banner::OPTIONS[Refinery::Banners::Banner.banner_types[@banner.banner_type]][:height] %>px; <%= @banner.banner_type == 'большой' ? ('background-color: ' + (@banner.background_color.present? ? @banner.background_color : '') + ';') : '' %>">
+        <%= image_tag @banner.image.url, width: Refinery::Banners::Banner::OPTIONS[Refinery::Banners::Banner.banner_types[@banner.banner_type]][:width], height: Refinery::Banners::Banner::OPTIONS[Refinery::Banners::Banner.banner_types[@banner.banner_type]][:height] %>
+      </div>
+    </div>
+
+  <% end %>
 
   <div class='field'>
     <%= render '/refinery/admin/wysiwyg',
@@ -61,6 +77,12 @@
   <script>
     $(document).ready(function(){
       page_options.init(false, '', '');
+      $('#background-color').minicolors({
+        opacity: false,
+        change: function(hex, opacity) {
+            $('#example-banner').css("background-color", $('#background-color').minicolors('rgbaString'));
+        }
+      });
     });
   </script>
 <% end -%>

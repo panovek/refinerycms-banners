@@ -18,7 +18,7 @@ module Refinery
         protected
 
         def banner_params
-          params.require(:banner).permit(:title, :link, :description, :image_id, :is_active, :position, :start_date, :expiry_date, :banner_type)
+          params.require(:banner).permit(:title, :link, :description, :image_id, :is_active, :position, :start_date, :expiry_date, :banner_type, :background_color)
         end
       end
     end
