@@ -5,6 +5,7 @@ Gem::Specification.new do |s|
   s.name              = 'refinerycms-banners'
   s.version           = '1.0'
   s.description       = 'Ruby on Rails Banners extension for Refinery CMS'
+  s.authors           = ['Eduard Panov']
   s.date              = '2015-01-28'
   s.summary           = 'Banners extension for Refinery CMS'
   s.require_paths     = %w(lib)
