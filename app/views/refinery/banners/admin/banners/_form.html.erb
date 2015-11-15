@@ -36,8 +36,8 @@
     <% end %>
     <div class='field'>
       <%= f.label "Примерный вид баннера" -%>
-      <div id="example-banner" style="text-align: center; height: <%= Refinery::Banners::Banner::OPTIONS[Refinery::Banners::Banner.banner_types[@banner.banner_type]][:height] %>px; <%= @banner.banner_type == 'большой' ? ('background-color: ' + (@banner.background_color.present? ? @banner.background_color : '') + ';') : '' %>">
-        <%= image_tag @banner.image.url, width: Refinery::Banners::Banner::OPTIONS[Refinery::Banners::Banner.banner_types[@banner.banner_type]][:width], height: Refinery::Banners::Banner::OPTIONS[Refinery::Banners::Banner.banner_types[@banner.banner_type]][:height] %>
+      <div id="example-banner" style="text-align: center; <%= @banner.banner_type == 'большой' ? ('background-color: ' + (@banner.background_color.present? ? @banner.background_color : '') + ';') : '' %>">
+        <%= image_tag @banner.image.url, width: Refinery::Banners::Banner::OPTIONS[Refinery::Banners::Banner.banner_types[@banner.banner_type]][:width] %>
       </div>
     </div>
 
